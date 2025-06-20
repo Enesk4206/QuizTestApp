@@ -14,6 +14,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class QuestionDto {
     private Long id;
-    private String quiz;
+    private Long quiz_id;
     private Set<String> questionType = new HashSet<>();
 }
