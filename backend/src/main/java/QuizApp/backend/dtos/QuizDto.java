@@ -13,7 +13,8 @@ public class QuizDto {
     private Long id;
     private String title;
     private String description;
-    private String category;
-    private String user;
+    private Long category_id;
+    private Long instructor_id;
     private String difficulty;
+    private boolean isActive;
 }
