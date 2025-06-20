@@ -28,7 +28,7 @@ public class UserAnswerService{
     public UserAnswerDto create(UserAnswerDto request){
         
         User user = userRepository.findById(request.getUser_id()).orElseThrow(
-            ()-> new RuntimeException("Instructor id not found!")
+            ()-> new RuntimeException("User id not found!")
         );
 
         Question question = questionRepository.findById(request.getQuestion_id()).orElseThrow(
@@ -52,7 +52,7 @@ public class UserAnswerService{
         );
 
         User user = userRepository.findById(request.getUser_id()).orElseThrow(
-            ()-> new RuntimeException("Instructor id not found!")
+            ()-> new RuntimeException("User id not found!")
         );
 
         Question question = questionRepository.findById(request.getQuestion_id()).orElseThrow(

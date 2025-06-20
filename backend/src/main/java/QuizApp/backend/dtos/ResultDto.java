@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ResultDto {
     private Long id;
-    private String user;
-    private String quiz;
+    private Long user_id;
+    private Long quiz_id;
     private int score;
 }
