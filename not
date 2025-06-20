@@ -1,0 +1,41 @@
+
+Quiz App Temel Modelleri - Öneri
+User (Kullanıcı)
+
+Zaten tamamlamışsın; username, email, password, role (USER, OWNER, SUPERADMIN vb.), yaş, telefon vb.
+
+Category (Kategori)
+
+Quiz’ler genellikle kategorilere ayrılır (örneğin Matematik, Tarih, Genel Kültür).
+
+Alanlar: id, name, description, createdAt, updatedAt
+
+Quiz / Test
+
+Kategorilere bağlı testler.
+
+Alanlar: id, title, description, category (Category), createdBy (User - owner/admin), difficulty, createdAt
+
+Question (Soru)
+
+Her testin soruları olur.
+
+Alanlar: id, quiz (Quiz), questionText, questionType (çoktan seçmeli, doğru/yanlış vb.), createdAt
+
+AnswerOption (Cevap Seçeneği)
+
+Çoktan seçmeli sorular için seçenekler.
+
+Alanlar: id, question (Question), text, isCorrect (boolean)
+
+UserAnswer (Kullanıcı Cevabı)
+
+Kullanıcının hangi soruya hangi cevabı verdiği.
+
+Alanlar: id, user (User), question (Question), selectedAnswer (AnswerOption), answeredAt
+
+Result / Score (Sonuç/Puan)
+
+Kullanıcının quizden aldığı puan veya sonuç.
+
+Alanlar: id, user (User), quiz (Quiz), score, completedAt

@@ -1,6 +1,6 @@
 package QuizApp.backend.models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -26,12 +26,12 @@ public class User {
     private String email;
     private int age;
     private String phoneNumber;
-    private Date createdAtDateTime;
+    private LocalDateTime createdAtDateTime;
     @Enumerated(EnumType.STRING)
     private Role role;
 
     @PrePersist
     protected  void onCreate(){
-        createdAtDateTime = new Date();
+        createdAtDateTime = LocalDateTime.now();
     }
 }
