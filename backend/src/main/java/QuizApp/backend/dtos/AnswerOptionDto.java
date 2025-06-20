@@ -9,9 +9,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AnswerDto {
+public class AnswerOptionDto {
     private Long id;
-    private String question;
+    private Long question_id;
     private String text;
     private boolean isCorrect;
 }

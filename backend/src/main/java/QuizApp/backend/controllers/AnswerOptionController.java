@@ -14,32 +14,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import QuizApp.backend.dtos.QuestionDto;
+import QuizApp.backend.dtos.AnswerOptionDto;
+import QuizApp.backend.services.AnswerOptionService;
 import lombok.RequiredArgsConstructor;
-import QuizApp.backend.services.QuestionService;
 
 @CrossOrigin(origins="http://localhost:5173")
 @RestController
-@RequestMapping("/api/question")
+@RequestMapping("/api/answerOption")
 @RequiredArgsConstructor
-public class QuestionController {
-    private final QuestionService questionService;
+public class AnswerOptionController {
+    private final AnswerOptionService answerOptionService;
 
     @PostMapping(value="/create")
-    public ResponseEntity<QuestionDto> createAPI(@RequestBody QuestionDto dto){
-        return ResponseEntity.status(HttpStatus.CREATED).body(questionService.create(dto));
+    public ResponseEntity<AnswerOptionDto> createAPI(@RequestBody AnswerOptionDto dto){
+        return ResponseEntity.status(HttpStatus.CREATED).body(answerOptionService.create(dto));
     }
     @PutMapping(value="/update/{id}")
-    public ResponseEntity<QuestionDto> updateAPI(@PathVariable Long id, @RequestBody QuestionDto dto){
-        return ResponseEntity.status(HttpStatus.OK).body(questionService.update(id, dto));
+    public ResponseEntity<AnswerOptionDto> updateAPI(@PathVariable Long id, @RequestBody AnswerOptionDto dto){
+        return ResponseEntity.status(HttpStatus.OK).body(answerOptionService.update(id, dto));
     }
     @DeleteMapping(value="/delete/{id}")
-    public ResponseEntity<QuestionDto> deleteAPI(@PathVariable Long id){
-        questionService.delete(id);
+    public ResponseEntity<AnswerOptionDto> deleteAPI(@PathVariable Long id){
+        answerOptionService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
-    @GetMapping(value="/all-questions")
-    public ResponseEntity<List<QuestionDto>> getAllAPI(){
-        return ResponseEntity.status(HttpStatus.OK).body(questionService.getAllQuestions());
+    @GetMapping(value="/all-answerOptions")
+    public ResponseEntity<List<AnswerOptionDto>> getAllAPI(){
+        return ResponseEntity.status(HttpStatus.OK).body(answerOptionService.getAll());
     }
 }

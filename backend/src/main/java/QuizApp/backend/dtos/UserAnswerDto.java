@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserAnswerDto {
     private Long id;
-    private String user;
-    private String question;
+    private Long user_id;
+    private Long question_id;
     private String selectedAnswer;
 }
